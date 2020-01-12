@@ -39,8 +39,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# Add in
-/src/app/@theme
-/src/app/@auth
-/src/app/@components
