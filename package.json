@@ -111,7 +111,7 @@
     "protractor": "5.1.2",
     "protractor-console-plugin": "^0.1.1",
     "rimraf": "2.6.1",
-    "stylelint": "7.13.0",
+    "stylelint": "^7.13.0",
     "ts-node": "3.2.2",
     "tslint": "^5.20.1",
     "tslint-language-service": "^0.9.9",
