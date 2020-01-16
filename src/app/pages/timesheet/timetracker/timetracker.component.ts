@@ -57,7 +57,6 @@ export class TimetrackerComponent implements OnDestroy {
     this.temperatureHumidityService.setTemperatureDevice(this.temperatureDevice)
       .pipe(takeWhile(() => this.alive))
       .subscribe();
-    
   }
 
   powerHumidityDevice(isOn: boolean) {
@@ -95,7 +94,7 @@ export class TimetrackerComponent implements OnDestroy {
     this.alive = false;
   }
 
-  switchCount(){
+  switchCount() {
     this.countdown.pause();
   }
 }

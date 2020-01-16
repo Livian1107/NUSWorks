@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { countUpTimerConfigModel, timerTexts } from 'ngx-timer';
 
 @Component({
   selector: 'ngx-workload',
   templateUrl: './workload.component.html',
 })
-export class WorkloadComponent {
+export class WorkloadComponent implements OnInit {
   private testConfig: any;
   
   ngOnInit(): void {

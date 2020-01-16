@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountupTimerService } from 'ngx-timer';
 import { countUpTimerConfigModel, timerTexts } from 'ngx-timer';
 import { TimesheetEvent } from '../../@core/interfaces/iot/timesheet';
@@ -16,7 +16,7 @@ import {
   styleUrls: ['timesheet.component.scss'],
   templateUrl: './timesheet.component.html',
 })
-export class TimesheetComponent {
+export class TimesheetComponent implements OnInit {
   private testConfig: any;
   advanced: boolean;
 
@@ -62,7 +62,7 @@ export class TimesheetComponent {
     // custom class
     this.testConfig.timerClass = 'test_Timer_class';
 
-    // timer text values  
+    // timer text values
     this.testConfig.timerTexts = new timerTexts();
     this.testConfig.timerTexts.hourText = 'Hours'; // default - hh
     this.testConfig.timerTexts.minuteText = 'Minutes'; // default - mm

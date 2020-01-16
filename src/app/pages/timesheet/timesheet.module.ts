@@ -1,5 +1,17 @@
 import { NgModule } from '@angular/core';
-import { NbButtonModule, NbToggleModule, NbCardModule, NbProgressBarModule, NbInputModule, NbTabsetModule, NbUserModule, NbIconModule, NbSelectModule, NbListModule, NbSpinnerModule } from '@nebular/theme';
+import { 
+  NbButtonModule,
+  NbToggleModule,
+  NbCardModule,
+  NbProgressBarModule,
+  NbInputModule,
+  NbTabsetModule,
+  NbUserModule,
+  NbIconModule,
+  NbSelectModule,
+  NbListModule,
+  NbSpinnerModule,
+} from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CountdownModule } from 'ngx-countdown';

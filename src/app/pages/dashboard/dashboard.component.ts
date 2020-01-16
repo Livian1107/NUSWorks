@@ -25,7 +25,6 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView,
 } from 'angular-calendar';
-
 const colors: any = {
   red: {
     primary: '#ad2121',

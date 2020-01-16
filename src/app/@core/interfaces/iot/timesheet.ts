@@ -14,4 +14,3 @@ export interface TimesheetEvent<MetaType = any> {
       draggable?: boolean;
       meta?: MetaType;
     }
-    
