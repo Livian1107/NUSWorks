@@ -156,7 +156,6 @@ export class DashboardComponent implements OnDestroy {
       draggable: true,
     },
   ];
-
   newEvent: CalendarEvent = 
     {
       start: startOfDay(new Date()),

@@ -60,8 +60,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory
-    })
+      useFactory: adapterFactory,
+    }),
   ],
   declarations: [
     CalendarComponent,

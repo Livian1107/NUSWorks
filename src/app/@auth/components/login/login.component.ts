@@ -89,7 +89,7 @@ export class NgxLoginComponent implements OnInit {
     //   }
     //   this.cd.detectChanges();
     // });
-    this.router.navigateByUrl("/pages/modules-dashboard");
+    this.router.navigateByUrl('/pages/modules-dashboard');
   }
 
   getConfigValue(key: string): any {

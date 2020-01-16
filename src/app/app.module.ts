@@ -42,7 +42,7 @@ export function init_app(injector: Injector) {
 
     CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory
+      useFactory: adapterFactory,
     }),
 
     ThemeModule.forRoot(),

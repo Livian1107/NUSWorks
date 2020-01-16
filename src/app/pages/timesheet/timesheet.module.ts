@@ -4,15 +4,15 @@ import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CountdownModule } from 'ngx-countdown';
 import { ThemeModule } from '../../@theme/theme.module';
-import { TimesheetComponent } from "./timesheet.component";
+import { TimesheetComponent } from './timesheet.component';
 import { ProfitCardComponent } from './profit-card/profit-card.component';
 import { ChartModule } from 'angular2-chartjs';
 import { StatsCardBackComponent } from './profit-card/back-side/stats-card-back.component';
 import { StatsAreaChartComponent } from './profit-card/back-side/stats-area-chart.component';
 import { StatsBarAnimationChartComponent } from './profit-card/front-side/stats-bar-animation-chart.component';
 import { StatsCardFrontComponent } from './profit-card/front-side/stats-card-front.component';
-import { TimetrackerComponent } from "./timetracker/timetracker.component";
-import { TimetrackerDraggerComponent } from "./timetracker/timetracker-dragger/timetracker-dragger.component";
+import { TimetrackerComponent } from './timetracker/timetracker.component';
+import { TimetrackerDraggerComponent } from './timetracker/timetracker-dragger/timetracker-dragger.component';
 import { ECommerceUserActivityComponent } from './user-activity/user-activity.component';
 import { CountryOrdersComponent } from './country-orders/country-orders.component';
 import { CountryOrdersMapComponent } from './country-orders/map/country-orders-map.component';
@@ -56,7 +56,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory
+      useFactory: adapterFactory,
     }),
   ],
   declarations: [

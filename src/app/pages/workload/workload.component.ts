@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CountupTimerService } from 'ngx-timer';
 import { countUpTimerConfigModel, timerTexts } from 'ngx-timer';
 
 @Component({
@@ -16,7 +15,7 @@ export class WorkloadComponent {
     // custom class
     this.testConfig.timerClass = 'test_Timer_class';
 
-    // timer text values  
+    // timer text values
     this.testConfig.timerTexts = new timerTexts();
     this.testConfig.timerTexts.hourText = 'Hours'; // default - hh
     this.testConfig.timerTexts.minuteText = 'Minutes'; // default - mm

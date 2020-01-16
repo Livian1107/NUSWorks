@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TimesheetComponent } from "./timesheet/timesheet.component";
-import { WorkloadComponent } from "./workload/workload.component";
+import { TimesheetComponent } from './timesheet/timesheet.component';
+import { WorkloadComponent } from './workload/workload.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [{
