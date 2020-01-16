@@ -35,7 +35,7 @@ const colors: any = {
   yellow: {
     primary: '#e3bc08',
     secondary: '#FDF1BA',
-  }
+  },
 };
 
 @Component({
@@ -73,7 +73,7 @@ export class CalendarComponent {
         this.events = this.events.filter(iEvent => iEvent !== event);
         this.handleEvent('Deleted', event);
       },
-    }
+    },
   ];
 
   refresh: Subject<any> = new Subject();
@@ -116,7 +116,7 @@ export class CalendarComponent {
         afterEnd: true,
       },
       draggable: true,
-    }
+    },
   ];
 
   activeDayIsOpen: boolean = true;
@@ -140,7 +140,7 @@ export class CalendarComponent {
   eventTimesChanged({
     event,
     newStart,
-    newEnd
+    newEnd,
   }: CalendarEventTimesChangedEvent): void {
     this.events = this.events.map(iEvent => {
       if (iEvent === event) {
@@ -173,7 +173,7 @@ export class CalendarComponent {
           beforeStart: true,
           afterEnd: true,
         },
-      }
+      },
     ];
   }
 

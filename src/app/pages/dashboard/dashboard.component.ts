@@ -102,7 +102,7 @@ export class DashboardComponent implements OnDestroy {
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.handleEvent('Edited', event);
-      }
+      },
     },
     {
       label: '<i class="fa fa-fw fa-times"></i>',
@@ -111,7 +111,7 @@ export class DashboardComponent implements OnDestroy {
         this.events = this.events.filter(iEvent => iEvent !== event);
         this.handleEvent('Deleted', event);
       },
-    }
+    },
   ];
 
   refresh: Subject<any> = new Subject();
@@ -134,14 +134,14 @@ export class DashboardComponent implements OnDestroy {
       start: startOfDay(new Date()),
       title: 'An event with no end date',
       color: colors.yellow,
-      actions: this.actions
+      actions: this.actions,
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
       title: 'A long event that spans 2 months',
       color: colors.blue,
-      allDay: true
+      allDay: true,
     },
     {
       start: addHours(startOfDay(new Date()), 2),
@@ -151,9 +151,9 @@ export class DashboardComponent implements OnDestroy {
       actions: this.actions,
       resizable: {
         beforeStart: true,
-        afterEnd: true
+        afterEnd: true,
       },
-      draggable: true
+      draggable: true,
     },
   ];
 
@@ -164,7 +164,6 @@ export class DashboardComponent implements OnDestroy {
       color: colors.blue,
       allDay: true,
     };
-  
   activeDayIsOpen: boolean = true;
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -184,7 +183,7 @@ export class DashboardComponent implements OnDestroy {
   eventTimesChanged({
     event,
     newStart,
-    newEnd
+    newEnd,
   }: CalendarEventTimesChangedEvent): void {
     this.events = this.events.map(iEvent => {
       if (iEvent === event) {

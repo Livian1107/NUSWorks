@@ -8,7 +8,7 @@ import {
   addDays,
   endOfMonth,
   addHours,
-  addSeconds
+  addSeconds,
 } from 'date-fns';
 
 @Component({
@@ -20,11 +20,11 @@ export class TimesheetComponent {
   private testConfig: any;
   advanced: boolean;
 
-  constructor(private timerService: CountupTimerService){
+  constructor(private timerService: CountupTimerService) {
     this.advanced = false;
   }
 
-  newEvent: TimesheetEvent ={
+  newEvent: TimesheetEvent = {
     start: new Date(),
     end: new Date(),
   };
@@ -52,27 +52,26 @@ export class TimesheetComponent {
       end: addHours(new Date(), 2),
       module: 'LAC1201',
       task: 'assignment',
-    }
-  ]
+    },
+  ];
 
   ngOnInit(): void {
-    //countUpTimerConfigModel
+    // countUpTimerConfigModel
     this.testConfig = new countUpTimerConfigModel();
 
-    //custom class
+    // custom class
     this.testConfig.timerClass = 'test_Timer_class';
 
-    //timer text values  
+    // timer text values  
     this.testConfig.timerTexts = new timerTexts();
-    this.testConfig.timerTexts.hourText = "Hours"; //default - hh
-    this.testConfig.timerTexts.minuteText = "Minutes"; //default - mm
-    this.testConfig.timerTexts.secondsText = "Seconds"; //default - ss
+    this.testConfig.timerTexts.hourText = 'Hours'; // default - hh
+    this.testConfig.timerTexts.minuteText = 'Minutes'; // default - mm
+    this.testConfig.timerTexts.secondsText = 'Seconds'; // default - ss
   }
 
   start() {
     this.timerService.startTimer();
     this.newEvent.start = new Date();
-    console.log("let's start" + this.newEvent.start);
   }
 
   pause() {
@@ -86,19 +85,19 @@ export class TimesheetComponent {
     this.resetEvent();
   }
 
-  addNewEvent(){
+  addNewEvent() {
     this.events = [
       this.newEvent,
-      ...this.events
+      ...this.events,
     ];
   }
 
-  resetEvent(){
+  resetEvent() {
     this.newEvent = { start: new Date() };
     this.timerService.stopTimer();
   }
 
-  toggleAdvanced(){
+  toggleAdvanced() {
     this.advanced = !this.advanced;
   }
 }
