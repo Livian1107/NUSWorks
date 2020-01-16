@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { 
+import {
   NbButtonModule,
   NbToggleModule,
   NbCardModule,

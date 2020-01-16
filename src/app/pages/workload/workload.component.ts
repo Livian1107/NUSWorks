@@ -7,7 +7,7 @@ import { countUpTimerConfigModel, timerTexts } from 'ngx-timer';
 })
 export class WorkloadComponent implements OnInit {
   private testConfig: any;
-  
+
   ngOnInit(): void {
     // countUpTimerConfigModel
     this.testConfig = new countUpTimerConfigModel();

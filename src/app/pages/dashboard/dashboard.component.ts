@@ -155,7 +155,7 @@ export class DashboardComponent implements OnDestroy {
       draggable: true,
     },
   ];
-  newEvent: CalendarEvent = 
+  newEvent: CalendarEvent =
     {
       start: startOfDay(new Date()),
       title: 'Work on FYP',
