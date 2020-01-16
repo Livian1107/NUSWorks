@@ -6,17 +6,16 @@ import { Device, DevicesData } from '../../@core/interfaces/iot/devices';
 import {
   ChangeDetectionStrategy,
   ViewChild,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import {
   startOfDay,
-  endOfDay,
   subDays,
   addDays,
   endOfMonth,
   isSameDay,
   isSameMonth,
-  addHours
+  addHours,
 } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -24,22 +23,22 @@ import {
   CalendarEvent,
   CalendarEventAction,
   CalendarEventTimesChangedEvent,
-  CalendarView
+  CalendarView,
 } from 'angular-calendar';
 
 const colors: any = {
   red: {
     primary: '#ad2121',
-    secondary: '#FAE3E3'
+    secondary: '#FAE3E3',
   },
   blue: {
     primary: '#1e90ff',
-    secondary: '#D1E8FF'
+    secondary: '#D1E8FF',
   },
   yellow: {
     primary: '#e3bc08',
-    secondary: '#FDF1BA'
-  }
+    secondary: '#FDF1BA',
+  },
 };
 
 @Component({
@@ -111,7 +110,7 @@ export class DashboardComponent implements OnDestroy {
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.events = this.events.filter(iEvent => iEvent !== event);
         this.handleEvent('Deleted', event);
-      }
+      },
     }
   ];
 
@@ -127,9 +126,9 @@ export class DashboardComponent implements OnDestroy {
       allDay: true,
       resizable: {
         beforeStart: true,
-        afterEnd: true
+        afterEnd: true,
       },
-      draggable: true
+      draggable: true,
     },
     {
       start: startOfDay(new Date()),
@@ -155,7 +154,7 @@ export class DashboardComponent implements OnDestroy {
         afterEnd: true
       },
       draggable: true
-    }
+    },
   ];
 
   newEvent: CalendarEvent = 
@@ -163,12 +162,10 @@ export class DashboardComponent implements OnDestroy {
       start: startOfDay(new Date()),
       title: 'Work on FYP',
       color: colors.blue,
-      allDay: true
+      allDay: true,
     };
   
-
   activeDayIsOpen: boolean = true;
-
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -194,7 +191,7 @@ export class DashboardComponent implements OnDestroy {
         return {
           ...event,
           start: newStart,
-          end: newEnd
+          end: newEnd,
         };
       }
       return iEvent;
@@ -210,7 +207,7 @@ export class DashboardComponent implements OnDestroy {
   addEvent(): void {
     this.events = [
       this.newEvent,
-      ...this.events
+      ...this.events,
     ];
   }
 

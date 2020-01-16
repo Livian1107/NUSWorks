@@ -2,7 +2,7 @@ import {
   Component,
   ChangeDetectionStrategy,
   ViewChild,
-  TemplateRef
+  TemplateRef,
 } from '@angular/core';
 import {
   startOfDay,
@@ -12,7 +12,7 @@ import {
   endOfMonth,
   isSameDay,
   isSameMonth,
-  addHours
+  addHours,
 } from 'date-fns';
 import { Subject } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -20,29 +20,29 @@ import {
   CalendarEvent,
   CalendarEventAction,
   CalendarEventTimesChangedEvent,
-  CalendarView
+  CalendarView,
 } from 'angular-calendar';
 
 const colors: any = {
   red: {
     primary: '#ad2121',
-    secondary: '#FAE3E3'
+    secondary: '#FAE3E3',
   },
   blue: {
     primary: '#1e90ff',
-    secondary: '#D1E8FF'
+    secondary: '#D1E8FF',
   },
   yellow: {
     primary: '#e3bc08',
-    secondary: '#FDF1BA'
+    secondary: '#FDF1BA',
   }
 };
 
 @Component({
-  selector: 'calendar-component',
+  selector: 'ngx-calendar-component',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./calendar.component.scss'],
-  templateUrl: './calendar.component.html'
+  templateUrl: './calendar.component.html',
 })
 export class CalendarComponent {
   @ViewChild('modalContent', { static: true }) modalContent: TemplateRef<any>;
@@ -64,7 +64,7 @@ export class CalendarComponent {
       a11yLabel: 'Edit',
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.handleEvent('Edited', event);
-      }
+      },
     },
     {
       label: '<i class="fa fa-fw fa-times"></i>',
@@ -72,7 +72,7 @@ export class CalendarComponent {
       onClick: ({ event }: { event: CalendarEvent }): void => {
         this.events = this.events.filter(iEvent => iEvent !== event);
         this.handleEvent('Deleted', event);
-      }
+      },
     }
   ];
 
@@ -88,22 +88,22 @@ export class CalendarComponent {
       allDay: true,
       resizable: {
         beforeStart: true,
-        afterEnd: true
+        afterEnd: true,
       },
-      draggable: true
+      draggable: true,
     },
     {
       start: startOfDay(new Date()),
       title: 'An event with no end date',
       color: colors.yellow,
-      actions: this.actions
+      actions: this.actions,
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
       title: 'A long event that spans 2 months',
       color: colors.blue,
-      allDay: true
+      allDay: true,
     },
     {
       start: addHours(startOfDay(new Date()), 2),
@@ -113,9 +113,9 @@ export class CalendarComponent {
       actions: this.actions,
       resizable: {
         beforeStart: true,
-        afterEnd: true
+        afterEnd: true,
       },
-      draggable: true
+      draggable: true,
     }
   ];
 
@@ -147,7 +147,7 @@ export class CalendarComponent {
         return {
           ...event,
           start: newStart,
-          end: newEnd
+          end: newEnd,
         };
       }
       return iEvent;
@@ -171,8 +171,8 @@ export class CalendarComponent {
         draggable: true,
         resizable: {
           beforeStart: true,
-          afterEnd: true
-        }
+          afterEnd: true,
+        },
       }
     ];
   }
