@@ -5,7 +5,6 @@ import {
   NB_AUTH_OPTIONS,
   NbAuthSocialLink,
   NbAuthService,
-  NbAuthResult,
 } from '@nebular/auth';
 import { getDeepFromObject } from '../../helpers';
 import { NbThemeService } from '@nebular/theme';

@@ -8,23 +8,18 @@ import { countUpTimerConfigModel, timerTexts } from 'ngx-timer';
 })
 export class WorkloadComponent {
   private testConfig: any;
-
-  constructor(private timerService: CountupTimerService) {
-
-  }
-
   
   ngOnInit(): void {
-    //countUpTimerConfigModel
+    // countUpTimerConfigModel
     this.testConfig = new countUpTimerConfigModel();
 
-    //custom class
+    // custom class
     this.testConfig.timerClass = 'test_Timer_class';
 
-    //timer text values  
+    // timer text values  
     this.testConfig.timerTexts = new timerTexts();
-    this.testConfig.timerTexts.hourText = "Hours"; //default - hh
-    this.testConfig.timerTexts.minuteText = "Minutes"; //default - mm
-    this.testConfig.timerTexts.secondsText = "Seconds"; //default - ss
+    this.testConfig.timerTexts.hourText = 'Hours'; // default - hh
+    this.testConfig.timerTexts.minuteText = 'Minutes'; // default - mm
+    this.testConfig.timerTexts.secondsText = 'Seconds'; // default - ss
   }
 }

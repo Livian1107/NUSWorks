@@ -4,12 +4,9 @@ import { countUpTimerConfigModel, timerTexts } from 'ngx-timer';
 import { TimesheetEvent } from '../../@core/interfaces/iot/timesheet';
 import {
   startOfDay,
-  endOfDay,
   subDays,
   addDays,
   endOfMonth,
-  isSameDay,
-  isSameMonth,
   addHours,
   addSeconds
 } from 'date-fns';

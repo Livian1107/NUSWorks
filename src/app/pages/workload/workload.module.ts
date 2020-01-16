@@ -1,5 +1,14 @@
 import { NgModule } from '@angular/core';
-import { NbButtonModule, NbCardModule, NbProgressBarModule, NbTabsetModule, NbUserModule, NbIconModule, NbSelectModule, NbListModule, NbSpinnerModule } from '@nebular/theme';
+import {
+  NbButtonModule,
+  NbCardModule,
+  NbProgressBarModule,
+  NbTabsetModule,
+  NbUserModule,
+  NbIconModule,
+  NbSelectModule,
+  NbListModule,
+  NbSpinnerModule } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { CountdownModule } from 'ngx-countdown';
@@ -38,7 +47,7 @@ import { WorkloadComponent } from './workload.component';
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory
+      useFactory: adapterFactory,
     }),
   ],
   declarations: [

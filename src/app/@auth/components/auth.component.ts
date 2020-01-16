@@ -34,7 +34,7 @@ export class NgxAuthComponent implements OnDestroy {
 
   subscription: any;
 
-  authenticated: boolean = true; //false
+  authenticated: boolean = true; // false
   token: string = '';
 
   // showcase of how to use the onAuthenticationChange method
