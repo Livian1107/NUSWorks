@@ -16,16 +16,6 @@ import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traf
 import { TrafficBackCardComponent } from './traffic-reveal-card/back-side/traffic-back-card.component';
 import { TrafficBarChartComponent } from './traffic-reveal-card/back-side/traffic-bar-chart.component';
 import { ECommerceProgressSectionComponent } from './progress-section/progress-section.component';
-import { ECommerceChartsPanelComponent } from './charts-panel/charts-panel.component';
-import { OrdersChartComponent } from './charts-panel/charts/orders-chart.component';
-import { ProfitChartComponent } from './charts-panel/charts/profit-chart.component';
-import { ChartPanelHeaderComponent } from './charts-panel/chart-panel-header/chart-panel-header.component';
-import { ChartPanelSummaryComponent } from './charts-panel/chart-panel-summary/chart-panel-summary.component';
-import { ECommerceLegendChartComponent } from './legend-chart/legend-chart.component';
-import { ECommerceVisitorsAnalyticsComponent } from './visitors-analytics/visitors-analytics.component';
-import { ECommerceVisitorsAnalyticsChartComponent } from './visitors-analytics/visitors-analytics-chart/visitors-analytics-chart.component';
-import { ECommerceVisitorsStatisticsComponent } from './visitors-analytics/visitors-statistics/visitors-statistics.component';
-import { SlideOutComponent } from './slide-out/slide-out.component';
 import { WorkloadComponent } from './workload.component';
 
 @NgModule({
@@ -58,17 +48,7 @@ import { WorkloadComponent } from './workload.component';
     TrafficBackCardComponent,
     TrafficFrontCardComponent,
     TrafficBarChartComponent,
-    OrdersChartComponent,
-    ProfitChartComponent,
-    ChartPanelHeaderComponent,
-    ChartPanelSummaryComponent,
-    ECommerceChartsPanelComponent,
     ECommerceProgressSectionComponent,
-    ECommerceLegendChartComponent,
-    ECommerceVisitorsAnalyticsComponent,
-    ECommerceVisitorsAnalyticsChartComponent,
-    ECommerceVisitorsStatisticsComponent,
-    SlideOutComponent,
     WorkloadComponent,
   ],
   providers: [

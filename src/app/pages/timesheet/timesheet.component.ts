@@ -21,7 +21,7 @@ import {
 })
 export class TimesheetComponent {
   private testConfig: any;
-  private advanced: boolean;
+  advanced: boolean;
 
   constructor(private timerService: CountupTimerService){
     this.advanced = false;
