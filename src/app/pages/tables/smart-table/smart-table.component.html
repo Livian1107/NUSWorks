@@ -1,8 +1,17 @@
- 
-
 <nb-card>
   <nb-card-header>
-    Smart Table
+    Select Course
+    <div class="form-inline">
+      <nb-select placeholder="Academic Year" [(ngModel)]="acadYear">
+        <nb-option value="2018-2019">2018-2019</nb-option>
+        <nb-option value="2017-2018">2017-2018</nb-option>
+        <nb-option value="2016-2017">2016-2017</nb-option>
+        <nb-option value="2015-2016">2015-2016</nb-option>
+      </nb-select>
+    </div>
+    <div class="form-inline">
+      <button (click)="retrieve()" nbButton status="primary">Confirm</button>
+    </div>
   </nb-card-header>
 
   <nb-card-body>

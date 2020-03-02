@@ -1,0 +1,96 @@
+<!-- <ngx-smart-table></ngx-smart-table> -->
+<nb-card>
+  <nb-card-header>
+    Coure Workload
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-inline">
+      How many MCs in total do you plan to take during this semester?
+    </div>
+    <div class="form-inline">
+      <ng5-slider [(value)]="courseLoad" [options]="courseLoadOp"></ng5-slider>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    Sleep Time
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-inline">
+      How many hours do you wanna keep for sleep daily?
+    </div>
+    <div class="form-inline">
+      <ng5-slider [(value)]="sleepTime" [options]="sleepTimeOp"></ng5-slider>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    CCA Time
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-inline">
+      How many hours do you have to spend on CCA weekly?
+    </div>
+    <div class="form-inline">
+      <ng5-slider [(value)]="cca" [options]="ccaOp"></ng5-slider>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    Family Time
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-inline">
+      How many hours do you have to spend with your family weekly?
+    </div>
+    <div class="form-inline">
+      <ng5-slider [(value)]="family" [options]="familyOp"></ng5-slider>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-header>
+    Social Time
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-inline">
+      How many hours do you have to spend with your friends?
+    </div>
+    <div class="form-inline">
+      <ng5-slider [(value)]="social" [options]="socialOp"></ng5-slider>
+    </div>
+  </nb-card-body>
+</nb-card>
+
+<button class="cal-btn" nbButton shape="round" (click)="calculate()">
+  Caculate Workload
+</button>
+
+<div *ngIf="showResult">
+  <nb-card status="danger" *ngIf="overload; else normal">
+    <nb-card-header>
+      Weekly Total Workload: {{this.totalWorkload}}
+    </nb-card-header>
+    <nb-card-body>
+      You are currenly overload!
+    </nb-card-body>
+  </nb-card>
+  <ng-template #normal>
+    <nb-card status="success">
+      <nb-card-header>
+        Weekly Total Workload: {{this.totalWorkload}}
+      </nb-card-header>
+      <nb-card-body>
+        Current workload is good!
+      </nb-card-body>
+    </nb-card>
+  </ng-template>
+</div>
+
