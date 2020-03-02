@@ -1,7 +1,5 @@
-
 import { Component } from '@angular/core';
 import { LocalDataSource } from 'ng2-smart-table';
-
 import { SmartTableData } from '../../../@core/interfaces/common/smart-table';
 
 @Component({
@@ -10,6 +8,7 @@ import { SmartTableData } from '../../../@core/interfaces/common/smart-table';
   styleUrls: ['./smart-table.component.scss'],
 })
 export class SmartTableComponent {
+  acadYear: string;
 
   settings = {
     add: {
@@ -27,38 +26,31 @@ export class SmartTableComponent {
       confirmDelete: true,
     },
     columns: {
-      id: {
-        title: 'ID',
-        type: 'number',
-      },
-      firstName: {
-        title: 'First Name',
+      code: {
+        title: 'Course Code',
         type: 'string',
       },
-      lastName: {
-        title: 'Last Name',
+      title: {
+        title: 'Title',
         type: 'string',
       },
-      login: {
-        title: 'Login',
-        type: 'string',
-      },
-      email: {
-        title: 'E-mail',
-        type: 'string',
-      },
-      age: {
-        title: 'Age',
-        type: 'number',
+      semesters: {
+        title: 'Semesters',
+        type: 'number[]',
       },
     },
   };
 
   source: LocalDataSource = new LocalDataSource();
+  
 
   constructor(private service: SmartTableData) {
-    const data = this.service.getData();
-    this.source.load(data);
+    // this.service.getAllModData(this.acadYear).subscribe(
+    //   (result) => {
+    //     const data = result;
+    //     this.source.load(data);
+    //   }
+    // );
   }
 
   onDeleteConfirm(event): void {
@@ -67,5 +59,9 @@ export class SmartTableComponent {
     } else {
       event.confirm.reject();
     }
+  }
+
+  retrieve() {
+   
   }
 }

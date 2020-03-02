@@ -3,14 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TimesheetComponent } from './timesheet/timesheet.component';
-import { WorkloadComponent } from './workload/workload.component';
+import { TimesheetComponent } from "./timesheet/timesheet.component";
+import { WorkloadComponent } from "./workload/workload.component";
+import { TablesComponent } from "./tables/tables.component"
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    {
+      path: 'course-estimator',
+      component: TablesComponent,
+    },
     {
       path: 'timesheet',
       component: TimesheetComponent,
