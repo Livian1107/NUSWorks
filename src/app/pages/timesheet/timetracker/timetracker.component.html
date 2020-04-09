@@ -1,0 +1,31 @@
+<nb-card size="large">
+  <ng-container *ngIf="temperatureData">
+    <div class="slider-container">
+      <ngx-timetracker-dragger [(value)]="temperatureData.value"
+                                [off]="!temperatureDevice.isOn"
+                                (valueChangeCompleted)="setTemperatureData()"
+                                (powerChange)="powerTemperatureDevice($event)"
+                                [min]="temperatureData.min" [max]="temperatureData.max" [disableArcColor]="theme.arcEmpty"
+                                [fillColors]="theme.arcFill" [thumbBg]="theme.thumbBg" [thumbBorderColor]="theme.thumbBorder">
+
+        <div class="slider-value-container"  [ngClass]="{ 'off': !temperatureDevice.isOn }">
+          <div class="value temperature h1">
+          </div>
+          <!-- <countdown #cd [config]="{leftTime: ((temperatureData.value | ngxRound)*60 ), demand: true}" (event)="handleEvent($event)"></countdown> -->
+          <div class="desc">
+            HH:MM:SS
+          </div>
+        </div>
+      </ngx-timetracker-dragger>
+      <div>
+        <button (click)="cd.pause()" class="btn btn-link btn-sm">pause</button>
+        <button (click)="cd.resume()" class="btn btn-link btn-sm">resume</button>
+        <button (click)="cd.stop()" class="btn btn-link btn-sm">stop</button>
+        <button (click)="cd.begin()" class="btn btn-link btn-sm">begin</button>
+      </div>
+      <!-- <button nbButton appearance="ghost" class="power-bg" (clcik)="cd.pause()">
+        <nb-icon class="power-icon" icon="power-outline" pack="eva"></nb-icon>
+      </button> -->
+    </div>
+  </ng-container>
+</nb-card>

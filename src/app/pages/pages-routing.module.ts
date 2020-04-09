@@ -2,16 +2,46 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TimesheetComponent } from "./timesheet/timesheet.component";
+import { WorkloadComponent } from "./workload/workload.component";
+import { TablesComponent } from "./tables/tables.component"
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
-import { ChartsComponent } from './charts/charts.component';
+import { ModuleComponent } from './module/module.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
     {
+      path: 'module',
+      component: ModuleComponent,
+    },
+    {
+      path: 'course-estimator',
+      component: TablesComponent,
+    },
+    {
+      path: 'timesheet',
+      component: TimesheetComponent,
+    },
+    {
+      path: 'modules-dashboard',
+      component: DashboardComponent,
+    },
+    {
+      path: 'workload',
+      component: WorkloadComponent,
+    },
+    {
       path: 'charts',
-      component: ChartsComponent,
+      loadChildren: () => import('./charts/charts.module')
+        .then(m => m.ChartsModule),
+    },
+    {
+      path: 'tables',
+      loadChildren: () => import('./tables/tables.module')
+        .then(m => m.TablesModule),
     },
     {
       path: 'miscellaneous',
@@ -20,7 +50,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'charts',
+      redirectTo: 'course-estimator',
       pathMatch: 'full',
     },
     {

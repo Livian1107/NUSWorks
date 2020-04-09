@@ -1,0 +1,69 @@
+#add-btn, .cal-btn {
+  margin: 0 auto;
+  display: block;
+}
+
+.mod-btn {
+  margin-left: 10px;
+}
+
+.mod-txt {
+  color: darkgray;
+}
+
+.plan-list, .search-card {
+  width: 100%;
+}
+
+.cal-btn{
+  margin-bottom: 30px;
+}
+
+.start-card {
+  height: 75vh;
+  background: url("../../../assets/images/cover4.jpg");
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.start-content {
+  height: 100%;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 25px;
+  background-color: #ffaa00;
+  max-width: 400px;
+  margin: auto;
+  min-width: 350px;
+  border-radius: 5px;
+}
+
+.instruct-size {
+  font-size: 0.9rem;
+}
+
+#start-btn {
+  border-color: white;
+}
+
+.icon {
+  font-size: 35px;
+}
+
+.form-inline {
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+.header {
+  background-color: #ffaa00;
+}
+
+.header-title {
+  color: white;
+}

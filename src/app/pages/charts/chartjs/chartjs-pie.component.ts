@@ -1,5 +1,5 @@
 
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
 
 @Component({
@@ -9,23 +9,15 @@ import { NbThemeService } from '@nebular/theme';
   `,
 })
 export class ChartjsPieComponent implements OnDestroy {
-  data: any;
+  @Input() data: any;
   options: any;
   themeSubscription: any;
 
   constructor(private theme: NbThemeService) {
     this.themeSubscription = this.theme.getJsTheme().subscribe(config => {
 
-      const colors: any = config.variables;
+      // const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
-
-      this.data = {
-        labels: ['Download Sales', 'In-Store Sales', 'Mail Sales'],
-        datasets: [{
-          data: [300, 500, 100],
-          backgroundColor: [colors.primaryLight, colors.infoLight, colors.successLight],
-        }],
-      };
 
       this.options = {
         maintainAspectRatio: false,

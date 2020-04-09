@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpBackend } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
   
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient, handler: HttpBackend ) {
+    this.http = new HttpClient(handler);
+  }
   
   API_KEY = '';
-  API_URL = 'https://20200311t102733-dot-monopoly-nus.appspot.com/api/basic/probabilities';
   
-  public getData() {
-    return this.httpClient.get(this.API_URL);
+  public getMod(code: string) {
+    return this.http.get(`https://nusmods.com/api/v2/2019-2020/modules/${code}.json`);
   }
 }

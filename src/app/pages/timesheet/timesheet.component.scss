@@ -1,0 +1,24 @@
+.form-inline [fullWidth] {
+  flex: 1;
+}
+
+.form-inline > * {
+  margin: 0 1.5rem 1.5rem 0; 
+}
+
+.toggle-btn{
+  float: right;
+}
+
+.timer{
+  margin-top: 50px;
+}
+
+.advanced{
+  display: flex;
+  justify-content: space-between;
+}
+
+nb-card.inline-form-card nb-card-body {
+  padding-bottom: 0;
+}

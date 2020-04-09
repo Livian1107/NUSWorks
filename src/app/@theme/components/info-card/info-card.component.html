@@ -1,0 +1,29 @@
+
+<nb-reveal-card>
+  <nb-card-front>
+    <nb-card>
+      <nb-card-header>
+        <h6>{{module.moduleCode}} : {{module.title}}</h6>
+        <nb-badge text="{{credit}} MCs" status="success" position="top right">
+        </nb-badge>
+      </nb-card-header>
+      <nb-card-body>
+        <h6>Workload</h6>
+        <ngx-chartjs-pie [data]="data"></ngx-chartjs-pie>
+      </nb-card-body>
+    </nb-card>
+  </nb-card-front>
+  <nb-card-back>
+    <nb-card>
+      <nb-card-header>
+        <h6>{{module.moduleCode}} : {{module.title}}</h6>
+        <nb-badge text="{{credit}} MCs" status="success" position="top right">
+        </nb-badge>
+      </nb-card-header>
+      <nb-card-body>
+        <h6>Description:</h6>
+        <span>{{module.description}}</span>
+      </nb-card-body>
+    </nb-card>
+  </nb-card-back>
+</nb-reveal-card>

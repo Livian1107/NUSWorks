@@ -1,0 +1,203 @@
+<nb-card class="start-card">
+  <div class="row start-content">
+    <div class="col-md-5">
+      <!-- <img class="cover-img" src="../../../assets/images/cover4.jpg" /> -->
+    </div>
+    <div class="col-md-5 instructions">
+      <h4>HOW DO YOU PLAN TO SCHEDULE YOUR SEMESTER?</h4>
+      <h6 class="instruct-size">Excessive workload would lead to the experiences of surface learning and in-balanced
+        study life.</h6>
+      <h6 class="instruct-size">This workload calculator tool will help you schedule your weekly activities and
+        estimated capable study hours. Try to be realistic and add your usual routines step-by-step.</h6>
+      <h6 class="instruct-size">The results are a GUIDE ONLY.</h6>
+      <a [routerLink]='"."' [fragment]="onStudyPlan" id="start-btn" nbButton shape="semi-round" status="warning" (click)="start()">
+        START TO PLAN YOUR TIMETABLE!
+      </a>
+    </div>
+  </div>
+</nb-card>
+
+<div *ngIf="showStudyPlan" #onStudyPlan>
+  <nb-card size="{{isAdPlan}}" class="card">
+    <nb-card-body>
+      <div class="row routine">
+        <div class="col-md-2 header">
+          <h3 class="header-title">1. STUDY PLAN</h3>
+        </div>
+        <div class="col-md-1"></div>
+        
+        <div class="col-md-8">
+          <h6>HOW MANY MCs DO YOU PLAN TO TAKE THIS SEMESTER?</h6>
+          <nb-toggle class="toggle-btn" (checkedChange)="toggleAdvanced()" status="info" labelPosition="start">Advanced (Add Specific Course Plan)</nb-toggle>
+        
+          <hr>
+
+          <div class="form-inline" *ngIf="!advanced">
+            <ng5-slider [(value)]="courseLoad" [options]="courseLoadOp"></ng5-slider>
+          </div>
+
+          <div class="form-inline advanced" *ngIf="advanced">
+            <nb-card class="search-card" accent="info">
+              <nb-card-header>Click the icon to search:
+                <nb-search type="modal-zoomin"></nb-search>
+                <span>{{ value || 'Module Code...' }}</span>
+                <span class="mod-text">ADD ON YOUR TIMETABLE?</span>
+                <button class="mod-btn" size="small" status="info" nbButton shape="round" (click)="addMod()">
+                  ADD
+                </button>
+              </nb-card-header>
+              <nb-card-body>
+              
+              </nb-card-body>
+            </nb-card>
+      
+            <div class="plan-list">
+              <nb-list>
+                <nb-list-item *ngFor="let mod of modList">
+                  <info-card [module]="mod"></info-card>
+                </nb-list-item>
+              </nb-list>
+            </div>
+
+          </div>
+
+          <button id="add-btn" nbButton shape="semi-round" status="warning" (click)="nextDaily()">
+            NEXT: ADD DAILY ROUTINE
+          </button>
+        </div>
+      </div>     
+    </nb-card-body>
+  </nb-card>
+</div>
+
+<div *ngIf="showDailyRoutine">
+  <nb-card size="large" class="card">
+    <nb-card-body>
+      <div class="row routine">
+        <div class="col-md-2 header">
+          <h3 class="header-title">2. DAILY ROUTINE</h3>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <h6>HOW MANY HOURS DO YOU SPEND ON THESE ACTIVITIES DAILY?</h6>
+          <hr>
+          <form>
+            <div class="form-inline">
+              How many hours do you sleep daily?
+              <ng5-slider [(value)]="sleepTime" [options]="sleepTimeOp"></ng5-slider>
+            </div>
+          
+            <div class="form-inline">
+              How many hours do you usually need for morning routine daily?
+              <ng5-slider [(value)]="morning" [options]="morningOp"></ng5-slider>
+            </div>
+          
+            <div class="form-inline">
+              How many hours do you usually need for evening routine daily?
+              <ng5-slider [(value)]="evening" [options]="eveningOp"></ng5-slider>
+            </div>
+          
+            <div class="form-inline">
+              How many hours do you spend on commuting daily?
+              <ng5-slider [(value)]="commute" [options]="commuteOp"></ng5-slider>
+            </div>
+          
+            <div class="form-inline">
+              How many hours do you prefer to have for free time daily (at least)?
+              <ng5-slider [(value)]="free" [options]="freeOp"></ng5-slider>
+            </div>
+          
+          </form>
+          <button id="add-btn" nbButton shape="semi-round" status="warning" (click)="nextWeekly()">
+            NEXT: ADD WEEKLY ROUTINE
+          </button>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+
+<div *ngIf="showWeeklyRoutine">
+  <nb-card size="large" class="card">
+    <nb-card-body>
+      <div class="row routine">
+        <div class="col-md-2 header">
+          <h3 class="header-title">3. WEEKLY ROUTINE</h3>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <h6>HOW MANY HOURS DO YOU SPEND ON THESE ACTIVITIES WEEKLY?</h6>
+          <hr>
+          <form>
+            <div class="form-inline">
+              How many hours do you spend with your family weekly?
+              <ng5-slider [(value)]="family" [options]="familyOp"></ng5-slider>
+            </div>
+          
+            <div class="form-inline">
+              How many hours do you spend on doing exercises weekly?
+              <ng5-slider [(value)]="exercise" [options]="exerciseOp"></ng5-slider>
+            </div>
+          
+            <div class="form-inline">
+              How many hours do you spend on your CCA weekly?
+              <ng5-slider [(value)]="cca" [options]="ccaOp"></ng5-slider>
+            </div>
+          
+            <div class="form-inline">
+              How many hours do you spend on social gathering weekly? (including friends outings, drinks, and other social
+              events)
+              <ng5-slider [(value)]="social" [options]="socialOp"></ng5-slider>
+            </div>
+          
+          </form>
+          <button id="add-btn" nbButton shape="semi-round" status="warning" (click)="nextOther()">
+            NEXT: ADD OTHER ROUTINE
+          </button>
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</div>
+
+<div *ngIf="showOtherRoutine">
+  <nb-card size="medium" class="card">
+    <nb-card-body>
+      <div class="row">
+        <div class="col-md-2 header">
+          <h3 class="header-title">4. OTHER ROUTINE</h3>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+          <h6>ANY OTHER ACTIVITIES YOU WISH TO ADD ON?</h6>
+          <hr>
+
+        </div>
+      </div>
+    </nb-card-body>
+  </nb-card>
+  <button class="cal-btn" status="info" nbButton shape="round" (click)="calculate()">
+    Caculate Workload
+  </button>
+  
+  <div *ngIf="showResult">
+    <nb-card status="danger" *ngIf="overload; else normal">
+      <nb-card-header>
+        Weekly Total Workload: {{this.totalWorkload}}
+      </nb-card-header>
+      <nb-card-body>
+        You are currenly overload!
+      </nb-card-body>
+    </nb-card>
+    <ng-template #normal>
+      <nb-card status="success">
+        <nb-card-header>
+          Weekly Total Workload: {{this.totalWorkload}}
+        </nb-card-header>
+        <nb-card-body>
+          Current workload is good!
+        </nb-card-body>
+      </nb-card>
+    </ng-template>
+  </div>
+</div>
