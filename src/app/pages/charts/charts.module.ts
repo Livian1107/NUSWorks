@@ -26,10 +26,8 @@ import { EchartsMultipleXaxisComponent } from './echarts/echarts-multiple-xaxis.
 import { EchartsAreaStackComponent } from './echarts/echarts-area-stack.component';
 import { EchartsBarAnimationComponent } from './echarts/echarts-bar-animation.component';
 import { EchartsRadarComponent } from './echarts/echarts-radar.component';
-import { ChartjsPieComponent } from './chartjs/chartjs-pie.component';
 
 const components = [
-  ChartjsPieComponent,
   ChartjsBarComponent,
   ChartjsLineComponent,
   ChartjsMultipleXaxisComponent,

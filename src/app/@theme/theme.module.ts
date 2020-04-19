@@ -28,7 +28,6 @@ import {
   SearchInputComponent,
   InfoCardComponent,
 } from './components';
-import { ChartjsPieComponent } from '../pages/charts/chartjs/chartjs-pie.component';
 
 import {
   CapitalizePipe,
@@ -48,6 +47,7 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import { ChartjsPieComponent } from '../pages/charts/chartjs/chartjs-pie.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -74,7 +74,7 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
-  ChartjsPieComponent,
+  ChartjsPieComponent
 ];
 const PIPES = [
   CapitalizePipe,

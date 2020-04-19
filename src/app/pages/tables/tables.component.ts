@@ -14,7 +14,10 @@ import { ApiService } from '../../api.service';
   styleUrls: ['./tables.component.scss'],
 })
 export class TablesComponent {
-  @ViewChild('onStudyPlan', { static: false }) studyPlan: ElementRef;
+  @ViewChild('onStudyPlan', { static: false }) onStudyPlan: ElementRef;
+  @ViewChild('onDailyPlan', { static: false }) onDailyPlan: ElementRef;
+  @ViewChild('onWeeklyPlan', { static: false }) onWeeklyPlan: ElementRef;
+  @ViewChild('onOtherPlan', { static: false }) onOtherPlan: ElementRef;
 
   advanced: boolean;
   onPlan: boolean;
@@ -207,20 +210,29 @@ export class TablesComponent {
     this.showStudyPlan = true;
     this.showStart = false;
     setTimeout(() => {
-      this.studyPlan.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+      this.onStudyPlan.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
     });
   }
 
   nextDaily() {
     this.showDailyRoutine = true;
+    setTimeout(() => {
+      this.onDailyPlan.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+    });
   }
 
   nextWeekly() {
     this.showWeeklyRoutine = true;
+    setTimeout(() => {
+      this.onWeeklyPlan.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+    });
   }
 
   nextOther() {
     this.showOtherRoutine = true;
+    setTimeout(() => {
+      this.onOtherPlan.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
+    });
   }
 
 }

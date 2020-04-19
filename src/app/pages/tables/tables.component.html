@@ -70,7 +70,7 @@
   </nb-card>
 </div>
 
-<div *ngIf="showDailyRoutine">
+<div *ngIf="showDailyRoutine" #onDailyPlan>
   <nb-card size="large" class="card">
     <nb-card-body>
       <div class="row routine">
@@ -117,7 +117,7 @@
   </nb-card>
 </div>
 
-<div *ngIf="showWeeklyRoutine">
+<div *ngIf="showWeeklyRoutine" #onWeeklyPlan>
   <nb-card size="large" class="card">
     <nb-card-body>
       <div class="row routine">
@@ -160,7 +160,7 @@
   </nb-card>
 </div>
 
-<div *ngIf="showOtherRoutine">
+<div *ngIf="showOtherRoutine" #onOtherPlan>
   <nb-card size="medium" class="card">
     <nb-card-body>
       <div class="row">
@@ -183,7 +183,7 @@
   <div *ngIf="showResult">
     <nb-card status="danger" *ngIf="overload; else normal">
       <nb-card-header>
-        Weekly Total Workload: {{this.totalWorkload}}
+        Weekly Total Workload: {{this.totalWorkload}} > Weekly Total Hours: {{this.weekHours}}
       </nb-card-header>
       <nb-card-body>
         You are currenly overload!
@@ -192,7 +192,7 @@
     <ng-template #normal>
       <nb-card status="success">
         <nb-card-header>
-          Weekly Total Workload: {{this.totalWorkload}}
+          Weekly Total Workload: {{this.totalWorkload}} <= Weekly Total Hours: {{this.weekHours}}
         </nb-card-header>
         <nb-card-body>
           Current workload is good!
