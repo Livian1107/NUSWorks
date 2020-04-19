@@ -18,7 +18,8 @@
       "dom"
     ],
     "plugins": [
-      { "name": "tslint-language-service"}
-    ]
+    ],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
   }
 }

@@ -1,7 +1,7 @@
- 
+  
 
 <h1 id="title" class="title">Login</h1>
-<p class="sub-title">Hello! Log in with your NUSNET ID.</p>
+<p class="sub-title">Hello! Log in with your email.</p>
 
 <nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
   <p class="alert-title"><b>Oh snap!</b></p>
@@ -19,21 +19,17 @@
 
 <div [formGroup]="loginForm" aria-labelledby="title">
   <div class="form-control-group">
-    <!-- <label for="input-email">NUSNET ID:</label>
+    <label for="input-email">Email address:</label>
     <input  nbInput
             fullWidth
             id="input-email"
             formControlName="email"
             [status]="email.dirty ? (email.invalid  ? 'danger' : 'success') : ''"
             [attr.aria-invalid]="email.invalid && email.touched ? true : null"
-            placeholder="NUSNET ID (e.g. e00001234)">
+            placeholder="Email address">
     <ngx-validation-message label="Email address" [showPattern]="email?.hasError('pattern') && email.touched"
       [showRequired]="email?.errors?.required && email.touched"></ngx-validation-message>
-  </div> -->
-  <label>NUSNET ID:</label>
-  <input nbInput fullWidth placeholder="NUSNET ID (e.g. e00001234)">
   </div>
-
 
   <div class="form-control-group">
     <span class="label-with-link">
@@ -57,17 +53,14 @@
   <div class="form-control-group accept-group">
     <nb-checkbox name="rememberMe" *ngIf="rememberMe">Remember me</nb-checkbox>
   </div>
-<!-- <button nbButton fullWidth status="primary" size="large" (click)="login()" [disabled]="submitted || !loginForm.valid"
-  [class.btn-pulse]="submitted">
-  Log In
-</button> -->
+
   <button nbButton fullWidth status="primary" size="large"
-   (click)="login()"
+   (click)="login()" [disabled]="submitted || !loginForm.valid"
     [class.btn-pulse]="submitted">
     Log In
   </button>
 </div>
-<!-- 
+
 <section *ngIf="socialLinks && socialLinks.length > 0" class="links" aria-label="Social sign in">
   or enter with:
   <div class="socials">
@@ -94,4 +87,4 @@
 
 <section class="another-action" aria-label="Register">
   Don't have an account? <a class="text-link" routerLink="../register">Register</a>
-</section> -->
+</section>

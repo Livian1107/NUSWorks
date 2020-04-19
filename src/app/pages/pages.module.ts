@@ -11,6 +11,7 @@ import { TimesheetModule } from "./timesheet/timesheet.module";
 import { TablesModule } from "./tables/tables.module";
 import { NbMenuModule } from '@nebular/theme';
 import { AuthModule } from '../@auth/auth.module';
+import { ModuleInfoModule } from './module/module-info.module';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -18,6 +19,7 @@ const PAGES_COMPONENTS = [
 
 @NgModule({
   imports: [
+    ModuleInfoModule,
     PagesRoutingModule,
     ThemeModule,
     DashboardModule,

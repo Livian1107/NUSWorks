@@ -24,7 +24,6 @@ import { TrafficBarComponent } from './traffic-reveal-card/front-side/traffic-ba
 import { TrafficFrontCardComponent } from './traffic-reveal-card/front-side/traffic-front-card.component';
 import { TrafficBackCardComponent } from './traffic-reveal-card/back-side/traffic-back-card.component';
 import { TrafficBarChartComponent } from './traffic-reveal-card/back-side/traffic-bar-chart.component';
-import { ECommerceProgressSectionComponent } from './progress-section/progress-section.component';
 import { WorkloadComponent } from './workload.component';
 
 @NgModule({
@@ -57,7 +56,6 @@ import { WorkloadComponent } from './workload.component';
     TrafficBackCardComponent,
     TrafficFrontCardComponent,
     TrafficBarChartComponent,
-    ECommerceProgressSectionComponent,
     WorkloadComponent,
   ],
   providers: [

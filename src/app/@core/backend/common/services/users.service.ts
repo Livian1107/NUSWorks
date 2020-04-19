@@ -1,4 +1,3 @@
-
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { UsersApi } from '../api/users.api';
@@ -23,9 +22,13 @@ export class UsersService extends UserData {
   }
 
   getCurrentUser(): Observable<User> {
+    this.authService.getToken().subscribe(token => {
+      console.log(token);
+    })
     return this.authService.isAuthenticated()
       .pipe(
         switchMap(authenticated => {
+           console.log(authenticated)
           return authenticated ? this.api.getCurrent() : of(null);
         }),
         map(u => {

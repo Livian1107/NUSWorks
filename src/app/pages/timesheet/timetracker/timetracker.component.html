@@ -11,7 +11,7 @@
         <div class="slider-value-container"  [ngClass]="{ 'off': !temperatureDevice.isOn }">
           <div class="value temperature h1">
           </div>
-          <countdown #cd [config]="{leftTime: ((temperatureData.value | ngxRound)*60 ), demand: true}" (event)="handleEvent($event)"></countdown>
+          <!-- <countdown #cd [config]="{leftTime: ((temperatureData.value | ngxRound)*60 ), demand: true}" (event)="handleEvent($event)"></countdown> -->
           <div class="desc">
             HH:MM:SS
           </div>

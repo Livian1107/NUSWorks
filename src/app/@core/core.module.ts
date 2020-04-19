@@ -18,7 +18,7 @@ import { IotMockModule } from './mock/iot/iot-mock.module';
 import { UserStore } from './stores/user.store';
 import { UsersService } from './backend/common/services/users.service';
 import { SettingsService } from './backend/common/services/settings.service';
-import { InitUserService } from '../@theme/services/init-user.service';
+// import { InitUserService } from '../@theme/services/init-user.service';
 
 export const NB_CORE_PROVIDERS = [
   ...CommonMockModule.forRoot().providers,
@@ -54,7 +54,7 @@ export class CoreModule {
         ...NB_CORE_PROVIDERS,
         UserStore,
         UsersService,
-        InitUserService,
+        // InitUserService,
         SettingsService,
       ],
     };

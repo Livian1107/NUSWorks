@@ -5,7 +5,7 @@
     <div class="form-inline">
       <h3>I want to</h3>
         <input type="text" class="form-control" [(ngModel)]="newEvent.title" (keyup)="refresh.next()" />
-        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="newEvent.start" (ngModelChange)="refresh.next()"
+        <input class="form-inline" type="text" mwlFlatpickr [(ngModel)]="newEvent.start" (ngModelChange)="refresh.next()"
           [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
           placeholder="Today" />
         <button class="btn btn-primary pull-right" (click)="addEvent()">
@@ -32,7 +32,7 @@
               <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()" />
             </td>
             <td>
-              <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()" />
+              <input type="color" class="form-control" [(ngModel)]="event.color.primary" (change)="refresh.next()" />
             </td>
             <td>
               <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start"

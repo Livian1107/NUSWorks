@@ -1,12 +1,15 @@
 
 import { Component } from '@angular/core';
+import *  as  data from '../../../../assets/data/mod_example.json';
+import { Module } from '../../../@core/interfaces/common/module.js';
+
 
 @Component({
   selector: 'ngx-one-column-layout',
   styleUrls: ['./one-column.layout.scss'],
   template: `
     <nb-layout windowMode>
-      <nb-layout-header fixed>
+      <nb-layout-header class="layout-header" fixed>
         <ngx-header></ngx-header>
       </nb-layout-header>
 
@@ -24,4 +27,9 @@ import { Component } from '@angular/core';
     </nb-layout>
   `,
 })
-export class OneColumnLayoutComponent {}
+export class OneColumnLayoutComponent {
+  mod: Module;
+  constructor(){
+    this.mod = data;
+  }
+}

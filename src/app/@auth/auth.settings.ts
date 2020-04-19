@@ -1,21 +1,13 @@
-import { NbPasswordAuthStrategy } from '@nebular/auth';
+ 
+
+import { NbAuthOAuth2JWTToken, NbPasswordAuthStrategy } from '@nebular/auth';
 import { environment } from '../../environments/environment';
 
 export const socialLinks = [
   {
-    url: 'https://github.com/akveo/nebular',
+    url: 'https://www.linkedin.com/in/liwen-lai-ba0b30158/',
     target: '_blank',
-    icon: 'github',
-  },
-  {
-    url: 'https://www.facebook.com/akveo/',
-    target: '_blank',
-    icon: 'facebook',
-  },
-  {
-    url: 'https://twitter.com/akveo_inc',
-    target: '_blank',
-    icon: 'twitter',
+    icon: 'linkedin',
   },
 ];
 
@@ -25,6 +17,7 @@ export const authOptions = {
       name: 'email',
       baseEndpoint: environment.apiUrl,
       token: {
+        class: NbAuthOAuth2JWTToken,
         key: 'token',
       },
       login: {
@@ -45,6 +38,10 @@ export const authOptions = {
       },
       resetPass: {
         endpoint: '/auth/reset-pass',
+        method: 'post',
+      },
+      refreshToken: {
+        endpoint: '/auth/refresh-token',
         method: 'post',
       },
     }),

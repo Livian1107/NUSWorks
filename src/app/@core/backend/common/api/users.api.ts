@@ -1,10 +1,10 @@
-
 import { Injectable } from '@angular/core';
-import { HttpParams } from '@angular/common/http';
+import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { HttpService } from './http.service';
 import { map } from 'rxjs/operators';
 import { DataSource } from 'ng2-smart-table/lib/lib/data-source/data-source';
+import { NbAuthToken } from '@nebular/auth';
 
 @Injectable()
 export class UsersApi {
@@ -29,10 +29,10 @@ export class UsersApi {
   }
 
   getCurrent(): Observable<any> {
-    return this.api.get(`${this.apiController}/current`)
+    return this.api.get(`${this.apiController}/current/`)
       .pipe(map(data => {
-        const picture = `${this.api.apiUrl}/${this.apiController}/${data.id}/photo`;
-        return { ...data, picture };
+        // const picture = `${this.api.apiUrl}/${this.apiController}/${data.id}/photo`;
+        return { ...data};
       }));
   }
 

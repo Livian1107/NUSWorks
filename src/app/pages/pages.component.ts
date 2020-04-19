@@ -3,7 +3,7 @@ import { takeWhile } from 'rxjs/operators';
 import { NbTokenService } from '@nebular/auth';
 import { NbMenuItem } from '@nebular/theme';
 import { PagesMenu } from './pages-menu';
-import { InitUserService } from '../@theme/services/init-user.service';
+// import { InitUserService } from '../@theme/services/init-user.service';
 
 @Component({
   selector: 'ngx-pages',
@@ -19,10 +19,11 @@ export class PagesComponent implements OnDestroy {
 
   menu: NbMenuItem[];
   alive: boolean = true;
-
+  
+  //protected initUserService: InitUserService,
+  // 
   constructor(private pagesMenu: PagesMenu,
     private tokenService: NbTokenService,
-    protected initUserService: InitUserService,
   ) {
     this.initMenu();
 

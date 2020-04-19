@@ -1,3 +1,4 @@
+ 
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -5,6 +6,7 @@ import {
   NB_AUTH_OPTIONS,
   NbAuthSocialLink,
   NbAuthService,
+  NbAuthResult,
 } from '@nebular/auth';
 import { getDeepFromObject } from '../../helpers';
 import { NbThemeService } from '@nebular/theme';
@@ -67,29 +69,28 @@ export class NgxLoginComponent implements OnInit {
   }
 
   login(): void {
-    // this.user = this.loginForm.value;
-    // this.errors = [];
-    // this.messages = [];
-    // this.submitted = true;
-    // this.service.authenticate(this.strategy, this.user).subscribe((result: NbAuthResult) => {
-    //   this.submitted = false;
+    this.user = this.loginForm.value;
+    this.errors = [];
+    this.messages = [];
+    this.submitted = true;
+    this.service.authenticate(this.strategy, this.user).subscribe((result: NbAuthResult) => {
+      this.submitted = false;
 
-    //   if (result.isSuccess()) {
-    //     this.messages = result.getMessages();
-    //     this.initUserService.initCurrentUser().subscribe();
-    //   } else {
-    //     this.errors = result.getErrors();
-    //   }
+      if (result.isSuccess()) {
+        this.messages = result.getMessages();
+        this.initUserService.initCurrentUser().subscribe();
+      } else {
+        this.errors = result.getErrors();
+      }
 
-    //   const redirect = result.getRedirect();
-    //   if (redirect) {
-    //     setTimeout(() => {
-    //       return this.router.navigateByUrl(redirect);
-    //     }, this.redirectDelay);
-    //   }
-    //   this.cd.detectChanges();
-    // });
-    this.router.navigateByUrl('/pages/modules-dashboard');
+      const redirect = result.getRedirect();
+      if (redirect) {
+        setTimeout(() => {
+          return this.router.navigateByUrl(redirect);
+        }, this.redirectDelay);
+      }
+      this.cd.detectChanges();
+    });
   }
 
   getConfigValue(key: string): any {

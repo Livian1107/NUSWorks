@@ -1,7 +1,21 @@
 import { Ng5SliderModule } from 'ng5-slider';
 import { NgModule } from '@angular/core';
-import { NbCardModule, NbIconModule, NbInputModule, 
-  NbTreeGridModule, NbButtonModule, NbSelectModule } from '@nebular/theme';
+import { NbCardModule, NbIconModule,
+  NbInputModule, 
+  NbTreeGridModule, 
+  NbButtonModule, 
+  NbSelectModule, 
+  NbStepperModule,
+  NbLayoutModule,
+  NbRouteTabsetModule,
+  NbTabsetModule,
+  NbActionsModule,
+  NbToggleModule,
+  NbSearchModule,
+  NbBadgeModule,
+  NbListModule,
+ } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { FormsModule } from '@angular/forms';
 
@@ -12,6 +26,13 @@ import { SmartTableComponent } from './smart-table/smart-table.component';
 
 @NgModule({
   imports: [
+    NbToggleModule,
+    NbActionsModule,
+    NbTabsetModule,
+    NbRouteTabsetModule,
+    NbEvaIconsModule,
+    NbLayoutModule,
+    NbStepperModule,
     NbCardModule,
     NbTreeGridModule,
     NbIconModule,
@@ -23,11 +44,15 @@ import { SmartTableComponent } from './smart-table/smart-table.component';
     TablesRoutingModule,
     Ng2SmartTableModule,
     Ng5SliderModule,
+    NbSearchModule,
+    NbBadgeModule,
+    NbListModule,
   ],
   declarations: [
     ...routedComponents,
     FsIconComponent,
     SmartTableComponent,
   ],
+  exports: [ThemeModule]
 })
 export class TablesModule { }

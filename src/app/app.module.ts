@@ -10,6 +10,7 @@ import { ThemeModule } from './@theme/theme.module';
 import { AuthModule } from './@auth/auth.module';
 import { InitUserService } from './@theme/services/init-user.service';
 
+
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
@@ -23,14 +24,14 @@ import {
   NbWindowModule,
 } from '@nebular/theme';
 
-export function init_app(injector: Injector) {
-  return () =>
-    new Promise<any>((resolve: Function) => {
-      const initUserService = injector.get(InitUserService);
-      initUserService.initCurrentUser().subscribe(() => { },
-        () => resolve(), () => resolve()); // a place for logging error
-    });
-}
+// export function init_app(injector: Injector) {
+//   return () => 
+//     new Promise<any>((resolve: Function) => {
+//       const initUserService = injector.get(InitUserService);
+//       initUserService.initCurrentUser().subscribe(() => { },
+//         () => resolve(), () => resolve()); // a place for logging error
+//     });
+// }
 
 @NgModule({
   declarations: [AppComponent],
@@ -61,12 +62,12 @@ export function init_app(injector: Injector) {
   ],
   bootstrap: [AppComponent],
   providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: init_app,
-      deps: [Injector],
-      multi: true,
-    },
+    // {
+    //   provide: APP_INITIALIZER,
+    //   useFactory: init_app,
+    //   deps: [Injector],
+    //   multi: true,
+    // },
   ],
 })
 export class AppModule {

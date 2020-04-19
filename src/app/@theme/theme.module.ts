@@ -1,6 +1,7 @@
 
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChartModule } from 'angular2-chartjs';
 import {
   NbActionsModule,
   NbLayoutModule,
@@ -14,6 +15,8 @@ import {
   NbIconModule,
   NbSpinnerModule,
   NbThemeModule,
+  NbBadgeModule,
+  NbCardModule, 
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
@@ -23,7 +26,9 @@ import {
   FooterComponent,
   HeaderComponent,
   SearchInputComponent,
+  InfoCardComponent,
 } from './components';
+
 import {
   CapitalizePipe,
   PluralPipe,
@@ -42,6 +47,7 @@ import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
+import { ChartjsPieComponent } from '../pages/charts/chartjs/chartjs-pie.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -57,14 +63,18 @@ const NB_MODULES = [
   NbIconModule,
   NbSpinnerModule,
   NbEvaIconsModule,
+  NbBadgeModule,
+  NbCardModule, 
 ];
 const COMPONENTS = [
   HeaderComponent,
   FooterComponent,
+  InfoCardComponent,
   SearchInputComponent,
   OneColumnLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  ChartjsPieComponent
 ];
 const PIPES = [
   CapitalizePipe,
@@ -75,7 +85,10 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, AuthModule, ...NB_MODULES],
+  imports: [CommonModule,
+    ChartModule,
+    AuthModule,
+    ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
   declarations: [...COMPONENTS, ...PIPES],
 })

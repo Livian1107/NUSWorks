@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+    "target": "https://nusmods.com",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

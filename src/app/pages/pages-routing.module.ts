@@ -7,11 +7,16 @@ import { TimesheetComponent } from "./timesheet/timesheet.component";
 import { WorkloadComponent } from "./workload/workload.component";
 import { TablesComponent } from "./tables/tables.component"
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { ModuleComponent } from './module/module.component';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
   children: [
+    {
+      path: 'module',
+      component: ModuleComponent,
+    },
     {
       path: 'course-estimator',
       component: TablesComponent,
@@ -27,41 +32,6 @@ const routes: Routes = [{
     {
       path: 'workload',
       component: WorkloadComponent,
-    },
-    {
-      path: 'users',
-      loadChildren: () => import('./users/users.module')
-        .then(m => m.UsersModule),
-    },
-    {
-      path: 'layout',
-      loadChildren: () => import('./layout/layout.module')
-        .then(m => m.LayoutModule),
-    },
-    {
-      path: 'forms',
-      loadChildren: () => import('./forms/forms.module')
-        .then(m => m.FormsModule),
-    },
-    {
-      path: 'ui-features',
-      loadChildren: () => import('./ui-features/ui-features.module')
-        .then(m => m.UiFeaturesModule),
-    },
-    {
-      path: 'modal-overlays',
-      loadChildren: () => import('./modal-overlays/modal-overlays.module')
-        .then(m => m.ModalOverlaysModule),
-    },
-    {
-      path: 'extra-components',
-      loadChildren: () => import('./extra-components/extra-components.module')
-        .then(m => m.ExtraComponentsModule),
-    },
-    {
-      path: 'maps',
-      loadChildren: () => import('./maps/maps.module')
-        .then(m => m.MapsModule),
     },
     {
       path: 'charts',
@@ -80,7 +50,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'course-estimator',
       pathMatch: 'full',
     },
     {

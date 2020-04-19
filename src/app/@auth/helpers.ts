@@ -1,3 +1,4 @@
+ 
 
 /**
  * Extending object that entered in first argument.

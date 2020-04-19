@@ -1,5 +1,6 @@
+ 
 
-import { NbAuthService, NbAuthJWTToken, decodeJwtPayload } from '@nebular/auth';
+import { NbAuthService, NbAuthOAuth2JWTToken } from '@nebular/auth';
 import { NbRoleProvider } from '@nebular/security';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -26,8 +27,8 @@ export class RoleProvider extends NbRoleProvider {
   getRole(): Observable<string | string[]> {
     return this.authService.onTokenChange()
       .pipe(
-        map((token: NbAuthJWTToken) => {
-          const payload = decodeJwtPayload(token.toString());
+        map((token: NbAuthOAuth2JWTToken) => {
+          const payload = token.getAccessTokenPayload();
           return !!(token.isValid() && payload && payload['role']) ? this.getLowerCaseRoles(payload['role']) : 'guest';
         }),
       );

@@ -1,3 +1,4 @@
+ 
 import { Component, OnDestroy } from '@angular/core';
 import { Location } from '@angular/common';
 
@@ -34,7 +35,7 @@ export class NgxAuthComponent implements OnDestroy {
 
   subscription: any;
 
-  authenticated: boolean = true; // false
+  authenticated: boolean = false;
   token: string = '';
 
   // showcase of how to use the onAuthenticationChange method
