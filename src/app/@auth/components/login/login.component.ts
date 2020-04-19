@@ -93,6 +93,25 @@ export class NgxLoginComponent implements OnInit {
     });
   }
 
+  activateGuest() {
+    this.user= this.fb.group({
+      email: 'livian1107@gmail.com',
+      password: 'admin123',
+    }).value;    
+
+    this.service.authenticate(this.strategy, this.user).subscribe((result: NbAuthResult) => {
+
+      const redirect = result.getRedirect();
+      if (redirect) {
+        setTimeout(() => {
+          return this.router.navigateByUrl(redirect);
+        }, this.redirectDelay);
+      }
+      this.cd.detectChanges();
+    });
+    
+  }
+
   getConfigValue(key: string): any {
     return getDeepFromObject(this.options, key, null);
   }

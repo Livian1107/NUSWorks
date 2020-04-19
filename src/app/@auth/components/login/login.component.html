@@ -2,6 +2,12 @@
 
 <h1 id="title" class="title">Login</h1>
 <p class="sub-title">Hello! Log in with your email.</p>
+<p class="sub-title">Log in as a <button nbButton
+                  appearance="ghost"
+                  status="warning"
+                  size="small"
+                   (click)="activateGuest()">GUSET</button></p>
+
 
 <nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
   <p class="alert-title"><b>Oh snap!</b></p>
