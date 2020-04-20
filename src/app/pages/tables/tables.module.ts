@@ -14,6 +14,7 @@ import { NbCardModule, NbIconModule,
   NbSearchModule,
   NbBadgeModule,
   NbListModule,
+  NbProgressBarModule,
  } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -26,6 +27,8 @@ import { SmartTableComponent } from './smart-table/smart-table.component';
 
 @NgModule({
   imports: [
+    NbProgressBarModule,
+    NbListModule,
     NbToggleModule,
     NbActionsModule,
     NbTabsetModule,

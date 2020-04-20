@@ -32,6 +32,11 @@ export class TablesComponent {
   dailyRoutine: number = 0;
   weeklyRoutine: number = 0;
   otherRoutine: number = 0;
+  otherName: string;
+  otherTime: number;
+  otherActivity: any;
+
+  workloadResult: number;
   
   showStart: boolean = true;
   showStudyPlan: boolean;
@@ -159,7 +164,7 @@ export class TablesComponent {
 
         });
       })
-
+    this.otherActivity = [];
     //this.workloadForm = this.formBuilder.group();
   }
 
@@ -193,17 +198,25 @@ export class TablesComponent {
     this.weeklyRoutine = this.family + this.exercise + this.cca + this.social;
   }
 
+  sumOtherRoutine() {
+    this.otherActivity.forEach(act=>{
+      this.otherRoutine = this.otherRoutine + act['time'];
+    })
+  }
+
   calculate() {
     this.sumDailyRoutine();
     this.sumWeeklyRoutine();
+    this.sumOtherRoutine();
     this.totalWorkload = this.coureLoadToHour*this.courseLoad + 
                           this.weekdays * this.dailyRoutine +
-                          this.weeklyRoutine;
+                          this.weeklyRoutine + this.otherRoutine;
     
     if(this.totalWorkload>this.weekHours) this.overload = true;
     else this.overload = false;
 
     this.showResult = true;
+    this.workloadResult = Math.round(this.totalWorkload/this.weekHours*100);
   }
 
   start() {
@@ -234,5 +247,25 @@ export class TablesComponent {
       this.onOtherPlan.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
     });
   }
+  
+  addOther() {
+    this.otherActivity.push({
+      name: this.otherName,
+      time: this.otherTime,
+    });
+    this.otherName = '';
+    this.otherTime = NaN;
+  }
 
+  get status() {
+    if (this.workloadResult <= 25) {
+      return 'warning';
+    } else if (this.workloadResult <= 60) {
+      return 'info';
+    } else if (this.workloadResult <= 85) {
+      return 'success';
+    } else {
+      return 'danger';
+    }
+  }
 }

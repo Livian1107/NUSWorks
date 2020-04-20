@@ -171,7 +171,23 @@
         <div class="col-md-8">
           <h6>ANY OTHER ACTIVITIES YOU WISH TO ADD ON?</h6>
           <hr>
-
+          <div>
+            Other Weekly Activity:
+            <input type="text" [(ngModel)]="otherName" nbInput placeholder="Activity">
+          </div>
+          <div>
+            Weekly Hours:
+            <input type="number" [(ngModel)]="otherTime" nbInput placeholder="Hours">
+          </div>
+          
+          <button class="cal-btn" status="info" nbButton (click)="addOther()">
+            Add
+          </button>
+          <nb-list>
+            <nb-list-item *ngFor="let act of otherActivity">
+              {{act['name']}}:  {{act['time']}}
+            </nb-list-item>
+          </nb-list>
         </div>
       </div>
     </nb-card-body>
@@ -187,6 +203,7 @@
       </nb-card-header>
       <nb-card-body>
         You are currenly overload!
+        <nb-progress-bar [value]=100 status="danger" [displayValue]="true"></nb-progress-bar>
       </nb-card-body>
     </nb-card>
     <ng-template #normal>
@@ -196,6 +213,7 @@
         </nb-card-header>
         <nb-card-body>
           Current workload is good!
+          <nb-progress-bar [value]="workloadResult" [status]="status" [displayValue]="true"></nb-progress-bar>
         </nb-card-body>
       </nb-card>
     </ng-template>
